@@ -1,11 +1,13 @@
-on: '2'
+version: '2'
 services:
    db:
      image: postgres:9.5
+     environment:
+        - POSTGRES_NAME:roboadvisordb
    web:
-     image: abhivision/roboadvisor:v13
-     command: python3 manage.py runserver 0.0.0.0:8000
+     image: abhivision/roboadvisor:aws_v3
+     command: python3 manage.py runserver --setting=app.production_settings 0.0.0.0:8000
      ports:
-       - "8000:8000"
+       - "80:8000"
      depends_on:
        - db

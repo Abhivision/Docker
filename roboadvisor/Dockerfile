@@ -1,4 +1,4 @@
-M ubuntu:16.04
+FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get install -y vim
 RUN apt-get install -y  python3.5
@@ -10,8 +10,9 @@ RUN git clone https://github.com/Abhivision/RoboAdvisor.git
 RUN apt-get install -y  postgresql-client
 RUN pip3 install -r RoboAdvisor/requirements.txt
 WORKDIR RoboAdvisor
+RUN apt install -y nodejs-legacy
 RUN apt-get install -y npm
 RUN npm install -y gulp -g
-RUN npm install
 RUN npm install webpack -g
+RUN npm install 
 RUN gulp

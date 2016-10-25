@@ -12,6 +12,6 @@ services:
      depends_on:
        - db
    sentiment:
-     image: abhivision/roboapp:f0
+     image: abhivision/roboapp:f1
      depends_on:
        - db

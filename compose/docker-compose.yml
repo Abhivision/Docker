@@ -5,9 +5,13 @@ services:
      environment:
         - POSTGRES_NAME:roboadvisordb
    web:
-     image: abhivision/roboadvisor:aws_v3
+     image: abhivision/roboadvisor:f0
      command: python3 manage.py runserver --setting=app.production_settings 0.0.0.0:8000
      ports:
        - "80:8000"
+     depends_on:
+       - db
+   sentiment:
+     image: abhivision/roboapp:f0
      depends_on:
        - db

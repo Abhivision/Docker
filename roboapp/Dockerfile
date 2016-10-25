@@ -10,4 +10,5 @@ RUN echo fun
 RUN git clone https://github.com/nevethap/roboapp.git
 RUN apt-get install -y  postgresql-client
 RUN pip install -r roboapp/requirements.txt
+WORKDIR roboapp
 

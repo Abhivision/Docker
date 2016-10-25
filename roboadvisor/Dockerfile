@@ -7,7 +7,6 @@ RUN apt-get -y install python3-pip
 RUN pip3 install --upgrade pip
 RUN apt-get install -y libpq-dev
 RUN git clone https://github.com/Abhivision/RoboAdvisor.git
-RUN git clone git pull --rebase origin master
 RUN apt-get install -y  postgresql-client
 RUN pip3 install -r RoboAdvisor/requirements.txt
 WORKDIR RoboAdvisor
@@ -15,5 +14,4 @@ RUN apt install -y nodejs-legacy
 RUN apt-get install -y npm
 RUN npm install -y gulp -g
 RUN npm install webpack -g
-RUN npm install 
-RUN gulp
+RUN npm install

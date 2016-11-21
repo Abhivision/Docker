@@ -12,10 +12,6 @@ RUN pip3 install -r RoboAdvisor/requirements.txt
 WORKDIR RoboAdvisor
 RUN apt install -y nodejs-legacy
 RUN apt-get install -y npm
-RUN npm config set registry http://registry.npmjs.org/
 RUN npm install -y gulp -g
 RUN npm install webpack -g
-RUN export DJANGO_SETTINGS_MODULE=app.setting_postgres
 RUN npm install
-RUN gulp
-RUN python3  manage.py collectstatic --noinput -i admin
